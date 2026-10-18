@@ -50,6 +50,7 @@ suites:
       state_top:
         base:
           '*':
+            - states.salt_driver
             - mysql._mapdata
             - mysql
       pillars:
@@ -59,6 +60,9 @@ suites:
               - mysql
       pillars_from_files:
         mysql.sls: test/salt/pillar/mysql.sls
+      dependencies:
+        - name: states
+          path: ./test/salt
     verifier:
       inspec_tests:
         - path: test/integration/default
