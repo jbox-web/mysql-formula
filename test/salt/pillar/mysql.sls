@@ -22,6 +22,8 @@ mysql:
     # root_password: '' - to have root@localhost without password
     root_password: 'somepass'
     root_password_hash: '*13883BDDBE566ECECC0501CDE9B293303116521A'
+    # Over the socket, as in production: root@localhost uses unix_socket here
+    unix_socket: /run/mysqld/mysqld.sock
     user: mysql
     # If you only manage the dbs and users and the server is on
     # another host
